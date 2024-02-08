@@ -16,7 +16,8 @@ cmdline_bd_code = 'livox0000000001'
 
 cur_path = os.path.split(os.path.realpath(__file__))[0] + '/'
 cur_config_path = cur_path + '../config'
-user_config_path = os.path.join(cur_config_path, 'MID360_config.json')
+rviz_config_path = os.path.join(cur_config_path, 'livox_lidar.rviz')
+user_config_path = os.path.join(cur_config_path, 'HAP_config.json')
 ################### user configure parameters for ros2 end #####################
 
 livox_ros2_params = [
@@ -34,7 +35,7 @@ livox_ros2_params = [
 
 def generate_launch_description():
     livox_driver = Node(
-        package='livox_ros_driver2',
+        package='livox_ros_driver',
         executable='livox_ros_driver2_node',
         name='livox_lidar_publisher',
         output='screen',
